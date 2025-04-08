@@ -1,0 +1,43 @@
+<form [formGroup]="personaForm" (ngSubmit)="submitForm()" class="persona-form">
+  <div class="form-group">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" formControlName="nombre" class="form-control">
+    <div *ngIf="personaForm.get('nombre')?.invalid && personaForm.get('nombre')?.touched" class="error-message">
+      El nombre es requerido y debe tener al menos 2 caracteres.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" formControlName="edad" class="form-control">
+    <div *ngIf="personaForm.get('edad')?.invalid && personaForm.get('edad')?.touched" class="error-message">
+      La edad debe ser entre 0 y 20 años.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="sexo">Sexo:</label>
+    <select id="sexo" formControlName="sexo" class="form-control">
+      <option *ngFor="let sexo of sexos" [value]="sexo">{{sexo}}</option>
+    </select>
+    <div *ngIf="personaForm.get('sexo')?.invalid && personaForm.get('sexo')?.touched" class="error-message">
+      Por favor seleccione un sexo.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="genero">Género:</label>
+    <select id="genero" formControlName="genero" class="form-control">
+      <option *ngFor="let genero of generos" [value]="genero">{{genero}}</option>
+    </select>
+    <div *ngIf="personaForm.get('genero')?.invalid && personaForm.get('genero')?.touched" class="error-message">
+      Por favor seleccione un género.
+    </div>
+  </div>
+
+<button type="submit" 
+        [disabled]="!personaForm.valid || loading" 
+        class="btn btn-primary">
+GUARDAR
+</button>
+</form>

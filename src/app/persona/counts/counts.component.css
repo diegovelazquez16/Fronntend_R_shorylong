@@ -1,0 +1,104 @@
+.gender-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(26, 75, 140, 0.1);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  
+  .card-header {
+    background-color: var(--light-blue);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .card-header h3 {
+    margin: 0;
+    color: var(--dark-blue);
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .gender-count {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+  
+  .gender-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    width: 45%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .gender-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .gender-item i {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .gender-item.hombre i {
+    color: var(--secondary-blue);
+  }
+  
+  .gender-item.mujer i {
+    color: #c2185b; /* Rosa contrastante para diferenciar */
+  }
+  
+  .count {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+  }
+  
+  .label {
+    font-size: 0.9rem;
+    color: var(--dark-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+  
+  .card-footer {
+    background-color: var(--light-blue);
+    padding: 0.75rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+  }
+  
+  .card-footer small {
+    color: var(--dark-blue);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .gender-count {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .gender-item {
+      width: 80%;
+      margin-bottom: 1rem;
+    }
+    
+    .gender-item:last-child {
+      margin-bottom: 0;
+    }
+  }
